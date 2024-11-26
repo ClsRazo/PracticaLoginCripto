@@ -87,7 +87,7 @@ const FormsLogin = () => {
               ¿Aún no tienes cuenta? Crea una <Link to="/registro">Aquí</Link>
             </p>
             <p>
-                <a href="#">Olvidé mi contraseña</a>
+               <Link to="/recuperar-password">Olvidé mi contraseña</Link>
             </p>
           </div>
       </div>
