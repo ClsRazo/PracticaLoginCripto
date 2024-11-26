@@ -1,3 +1,48 @@
+# Instrucciones generales
+
+Para correr el login:
+npm start
+
+Para correr el back:
+node index.js
+
+Para iniciar MySQL desde terminal (no lo he probado):
+net start mysql
+
+Para los tokens:
+npm install jsonwebtoken dotenv
+
+Para GitHub pages:
+npm install gh-pages --save-dev
+
+Para actualizar el pages de la pagina (Se hace después de hacer el commit sobre el main)
+npm run deploy
+
+# LISTA DE ACTIVIDADES
+- Realizar las regex para la fortaleza de las contraseñas
+	- O, en cambio, checar que regex o reglas trae la biblioteca de Dropbox
+- Añadir estilos CSS a las páginas ya hechas
+- Realizar la funcionalidad y página de "Olvidé mi contraseña"
+	- Página donde se introduce el usuario
+		- Se verifica que exista el usuario, si sí existe, se le manda un correo y se muestra mensaje "Hemos enviado un correo con las instrucciones para el restablecimiento de tu contraseña"
+	- Página donde se restablece la contraseña
+	- Después redirigir al inicio de sesión
+- Desarrollar la página de inicio con los datos curiosos
+	- Añadir funcionalidad para generar los PDFs de los datos curiosos
+	- Después de iniciar sesión, redireccionar al usuario a esta página de inicio
+- Desarrollar la página para verificar el correo electrónico
+- Al registrar, añadir la función de que solo registre el correo y, al verificar, añada el usuario y la contraseña a la BD
+- Realizar el formato para los correos de verificación y restablecimiento de la contraseña
+- Realizar logo de la aplicación (puede ser con IA)
+- Realizar eslogan de la aplicación
+- Después de verificar el email, redireccionar a la pantalla para iniciar sesión
+- Realizar el formato de los PDFs de los datos curiosos
+
+# OPCIONALES
+- Añadir función al registrar para que cheque si el nombre de usuario ya existe o no
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
