@@ -6,11 +6,14 @@ import React, {useState} from "react";
 //Usaré la Web Crypto API mejor, es más proceso, pero funciona
 
 //Para los links
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const FormsLogin = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+
+    //
+    const navigate = useNavigate();
 
     //Para convertir el ArrayBuffer a hexadecimal
     const aBufferToHex = (buffer) => {
@@ -55,6 +58,12 @@ const FormsLogin = () => {
 
         const respuesta2 = await respuesta.json();
         console.log("Datos recibidos: ", respuesta2);
+
+        //-----------------------Redirigir a Home Page----------------------------
+        if(respuesta2.message == "Login exitoso"){
+          console.log("Redirigiendo a Home");
+          navigate("/home");
+        }
     };
 
     return (
