@@ -8,7 +8,7 @@ export function BarraSuperiorInicio() {
             <nav>
                 <ul>
                     <li>
-                        <Link to="/">
+                        <Link to="/home">
                             <img src={LogoInicio} alt="Logo RegiSecure" className="LogoInicio" />
                         </Link>
                     </li>

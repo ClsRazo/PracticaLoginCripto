@@ -129,20 +129,31 @@ const RestablecerContraseña = () => {
                 return (
                     <div>
                         <BarraSuperiorInicio />
-                        <form onSubmit={manejarSolicitudRestablecimiento}>
-                            <h2>Restablecer Contraseña</h2>
+                        <div className='mainContainer'>
                             <div>
-                                <label>Nombre de Usuario:</label>
-                                <input
-                                    type="text"
-                                    value={usuario}
-                                    onChange={(e) => setUsuario(e.target.value)}
-                                    required
-                                />
+                                <h1 className="titulo">Restablecer Contraseña</h1>
                             </div>
-                            <button type="submit">Solicitar Restablecimiento</button>
-                            {mensajeError && <p style={{color: 'red'}}>{mensajeError}</p>}
-                        </form>
+                            <div className='card-datos'>
+                                <form onSubmit={manejarSolicitudRestablecimiento}>
+                                    <div className="cuadroDatos">
+                                        <label>Nombre de Usuario*:</label>
+                                        <input
+                                            type="text"
+                                            value={usuario}
+                                            onChange={(e) => setUsuario(e.target.value)}
+                                            className="card-input"
+                                            required
+                                        />
+                                    </div>
+                                    <div className='centrar'>
+                                        <button type="submit" className='boton'>Solicitar Restablecimiento</button>
+                                    </div>
+                                    <div className='parrafoCentrar'>
+                                        {mensajeError && <p style={{color: 'red'}}>{mensajeError}</p>}
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                         <FooterPG />
                     </div>
                 );
@@ -151,21 +162,34 @@ const RestablecerContraseña = () => {
                 return (
                     <div>
                         <BarraSuperiorInicio />
-                        <form onSubmit={manejarVerificacionTokenRestablecimiento}>
-                            <h2>Verificar Código de Restablecimiento</h2>
-                            <p>Hemos enviado un código de restablecimiento a tu correo electrónico.</p>
+                        <div className='mainContainer'>
                             <div>
-                                <label>Código de Restablecimiento:</label>
-                                <input
-                                    type="text"
-                                    value={tokenRestablecimiento}
-                                    onChange={(e) => setTokenRestablecimiento(e.target.value)}
-                                    required
-                                />
+                                <h2 className="titulo">Verificar Código de Restablecimiento</h2>
                             </div>
-                            <button type="submit">Verificar Código</button>
-                            {mensajeError && <p style={{color: 'red'}}>{mensajeError}</p>}
-                        </form>
+                            <div className='card-datos'>
+                                <form onSubmit={manejarVerificacionTokenRestablecimiento}>
+                                    <div className='parrafoCentrar'>
+                                        <p>Hemos enviado un código de restablecimiento a tu correo electrónico.</p>
+                                    </div>
+                                    <div className="cuadroDatos">
+                                        <label>Código de Restablecimiento*:</label>
+                                        <input
+                                            type="text"
+                                            value={tokenRestablecimiento}
+                                            onChange={(e) => setTokenRestablecimiento(e.target.value)}
+                                            className="card-input"
+                                            required
+                                        />
+                                    </div>
+                                    <div className='centrar'>
+                                        <button type="submit" className='boton'>Verificar Código</button>
+                                    </div>
+                                    <div className='parrafoCentrar'>
+                                        {mensajeError && <p style={{color: 'red'}}>{mensajeError}</p>}
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                         <FooterPG />
                     </div>
                 );
@@ -174,29 +198,41 @@ const RestablecerContraseña = () => {
                 return (
                     <div>
                         <BarraSuperiorInicio />
-                        <form onSubmit={manejarRestablecimientoContraseña}>
-                            <h2>Restablecer Contraseña</h2>
+                        <div className='mainContainer'>
                             <div>
-                                <label>Nueva Contraseña:</label>
-                                <input
-                                    type="password"
-                                    value={nuevaContraseña}
-                                    onChange={(e) => setNuevaContraseña(e.target.value)}
-                                    required
-                                />
+                                <h2 className='titulo'>Restablecer Contraseña</h2>
                             </div>
-                            <div>
-                                <label>Confirmar Nueva Contraseña:</label>
-                                <input
-                                    type="password"
-                                    value={confirmarContraseña}
-                                    onChange={(e) => setConfirmarContraseña(e.target.value)}
-                                    required
-                                />
+                            <div className='card-datos'>
+                                <form onSubmit={manejarRestablecimientoContraseña}>
+                                    <div className="cuadroDatos">
+                                        <label>Nueva Contraseña:</label>
+                                        <input
+                                            type="password"
+                                            value={nuevaContraseña}
+                                            onChange={(e) => setNuevaContraseña(e.target.value)}
+                                            className="card-input"
+                                            required
+                                        />
+                                    </div>
+                                    <div className="cuadroDatos">
+                                        <label>Confirmar Nueva Contraseña:</label>
+                                        <input
+                                            type="password"
+                                            value={confirmarContraseña}
+                                            onChange={(e) => setConfirmarContraseña(e.target.value)}
+                                            className="card-input"
+                                            required
+                                        />
+                                    </div>
+                                    <div className='centrar'>
+                                        <button type="submit" className='boton'>Restablecer Contraseña</button>
+                                    </div>
+                                    <div className='parrafoCentrar'>
+                                        {mensajeError && <p style={{color: 'red'}}>{mensajeError}</p>}
+                                    </div>
+                                </form>
                             </div>
-                            <button type="submit">Restablecer Contraseña</button>
-                            {mensajeError && <p style={{color: 'red'}}>{mensajeError}</p>}
-                        </form>
+                        </div>
                         <FooterPG />
                     </div>
                 );

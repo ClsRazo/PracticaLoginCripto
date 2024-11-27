@@ -8,9 +8,12 @@
   .mainContainer {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
-    min-height: 80vh;
+    min-height: 110vh;
+    max-height: 140vh;
     background-color: var(--morado-claro);
+    margin-top: -2%;
   }
   
   .card-datos {
@@ -21,26 +24,85 @@
     padding: 2rem;
     width: 100%;
     max-width: 400px;
+    margin-top: 2%;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+
+  .justificado{
+    text-align: justify;
+  }
+
+  .card-datos li{
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .cuadroDatos{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cuadroDatos label{
+    font-size: 1.2rem;
+    color: var(--morado-oscuro);
+    margin-bottom: 0.5rem;
   }
   
   .titulo {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: var(--morado-oscuro);
+    /* Centramos */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .titulo2 {
+    font-size: 1.6rem;
+    color: var(--morado-oscuro);
+    /* Centramos */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: -0.5rem;
   }
   
   .card-input {
     border: 1px solid var(--morado-oscuro);
     border-radius: 8px;
+    background-color: var(--morado-claro);
     padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .centrar{
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
   }
   
   .boton {
     background-color: var(--morado-oscuro);
-    color: white;
+    color: var(--morado-claro);
+    font-size: 1.2rem;
     padding: 0.6rem 1.2rem;
     border: none;
     border-radius: 8px;
     transition: 0.3s ease;
+    margin-bottom: 0%;
+  }
+
+  .parrafoCentrar{
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .textoHome{
+    margin-top: -2rem;
+    font-size: 1.2rem;
   }
   
   .boton:hover {
@@ -54,5 +116,13 @@
   
   .link-primary:hover {
     text-decoration: underline;
+  }
+
+  /* Media para bajar el ancho del contenedor a 484 px */
+  @media (max-width: 484px) {
+    .card-datos {
+      width: 90%;
+      max-width: 300px;
+    }
   }
   
