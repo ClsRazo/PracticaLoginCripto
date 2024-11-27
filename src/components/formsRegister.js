@@ -41,7 +41,7 @@ const Register = () => {
         const hashHex = aBufferToHex(hashBuffer);
         console.log("Hash hexadecimal: ", hashHex);
 
-        const respuesta = await fetch("http://localhost:5000/register", {
+        const respuesta = await fetch("https://practicaloginback.onrender.com/register", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
