@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import zxcvbn from 'zxcvbn'; // Biblioteca para la validación de contraseñas 
 
 const RestablecerContraseña = () => {
-    const [email, setEmail] = useState('');
     const [usuario, setUsuario] = useState('');
     const [paso, setPaso] = useState('solicitarRestablecimiento');
     const [tokenRestablecimiento, setTokenRestablecimiento] = useState('');
@@ -29,15 +28,13 @@ const RestablecerContraseña = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ 
-                    usuario,
-                    email 
+                    username: usuario
                 }),
             });
 
             const datos = await respuesta.json();
 
             if (respuesta.ok) {
-                // Pasar al paso de introducir token de restablecimiento
                 setPaso('introducirTokenRestablecimiento');
             } else {
                 setMensajeError(datos.error || 'Error en la solicitud de restablecimiento');
@@ -59,7 +56,7 @@ const RestablecerContraseña = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ 
-                    usuario,
+                    username: usuario,
                     tokenRestablecimiento 
                 }),
             });
@@ -67,7 +64,6 @@ const RestablecerContraseña = () => {
             const datos = await respuesta.json();
 
             if (respuesta.ok) {
-                // Pasar al paso de restablecer contraseña
                 setPaso('restablecerContraseña');
             } else {
                 setMensajeError(datos.error || 'Token inválido');
@@ -108,13 +104,13 @@ const RestablecerContraseña = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ 
-                    usuario,
+                    username: usuario,
                     tokenRestablecimiento,
                     nuevaContraseña: hashHex 
                 }),
             });
 
-            const respuestaDatos = await respuesta.json(); // Renamed variable to avoid conflict
+            const respuestaDatos = await respuesta.json();
 
             if (respuesta.ok) {
                 // Redirigir a la página de inicio de sesión
@@ -140,15 +136,6 @@ const RestablecerContraseña = () => {
                                 type="text"
                                 value={usuario}
                                 onChange={(e) => setUsuario(e.target.value)}
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label>Correo Electrónico:</label>
-                            <input
-                                type="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
                                 required
                             />
                         </div>
