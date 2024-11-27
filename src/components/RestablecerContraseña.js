@@ -23,7 +23,7 @@ const RestablecerContraseña = () => {
         setMensajeError('');
 
         try {
-            const respuesta = await fetch('http://localhost:5000/solicitar-restablecimiento', {
+            const respuesta = await fetch('https://practicaloginback.onrender.com/solicitar-restablecimiento', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
