@@ -1,6 +1,6 @@
 import React, { useState } from 'react'; 
 import { useNavigate } from 'react-router-dom'; 
-import zxcvbn from 'zxcvbn'; // Biblioteca para la validación de contraseñas 
+import zxcvbn from 'zxcvbn'; 
 
 const RestablecerContraseña = () => {
     const [usuario, setUsuario] = useState('');
@@ -12,7 +12,6 @@ const RestablecerContraseña = () => {
 
     const navegacion = useNavigate();
 
-    // Función para convertir ArrayBuffer a hexadecimal
     const aBufferToHex = (buffer) => {
         return [...new Uint8Array(buffer)].map((b) => b.toString(16).padStart(2, "0")).join("");
     };
@@ -78,21 +77,18 @@ const RestablecerContraseña = () => {
         e.preventDefault();
         setMensajeError('');
 
-        // Validar fortaleza de contraseña
         const fortalezaContraseña = zxcvbn(nuevaContraseña);
         if (fortalezaContraseña.score < 3) {
             setMensajeError('La contraseña es muy débil');
             return;
         }
 
-        // Verificar coincidencia de contraseñas
         if (nuevaContraseña !== confirmarContraseña) {
             setMensajeError('Las contraseñas no coinciden');
             return;
         }
 
         try {
-            // Generar hash de la nueva contraseña
             const codificador = new TextEncoder();
             const datos = codificador.encode(nuevaContraseña);
             const bufferHash = await window.crypto.subtle.digest("SHA-256", datos);
@@ -113,7 +109,6 @@ const RestablecerContraseña = () => {
             const respuestaDatos = await respuesta.json();
 
             if (respuesta.ok) {
-                // Redirigir a la página de inicio de sesión
                 navegacion('/');
             } else {
                 setMensajeError(respuestaDatos.error || 'Error al restablecer la contraseña');
