@@ -53,7 +53,7 @@ const RestablecerContraseña = () => {
         setMensajeError('');
 
         try {
-            const respuesta = await fetch('http://localhost:5000/verificar-token-restablecimiento', {
+            const respuesta = await fetch('https://practicaloginback.onrender.com/verificar-token-restablecimiento', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -102,7 +102,7 @@ const RestablecerContraseña = () => {
             const bufferHash = await window.crypto.subtle.digest("SHA-256", datos);
             const hashHex = aBufferToHex(bufferHash);
 
-            const respuesta = await fetch('http://localhost:5000/restablecer-contrasena', {
+            const respuesta = await fetch('https://practicaloginback.onrender.com/restablecer-contrasena', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
