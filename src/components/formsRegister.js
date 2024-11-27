@@ -68,48 +68,60 @@ const Register = () => {
     return(
         <div>
             <BarraSuperiorInicio />
-            <h1>Registro</h1>
-            <form onSubmit={handleRegister}>
+            <div className="mainContainer">
                 <div>
-                    <label>Nombre de Usuario:</label>
-                    <input
-                        type="text"
-                        placeholder="JuanBrcs"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        required
-                    />
+                    <h1 className="titulo">Registro</h1>
                 </div>
-                <div>
-                    <label>Correo electrónico:</label>
-                    <input
-                        type="email"
-                        placeholder="example@gmail.com"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
+                <div className="card-datos">
+                    <form onSubmit={handleRegister}>
+                        <div className="cuadroDatos">
+                            <label>Nombre de Usuario*:</label>
+                            <input
+                                type="text"
+                                className="card-input"
+                                placeholder="JuanBrcs"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className="cuadroDatos">
+                            <label>Correo electrónico*:</label>
+                            <input
+                                type="email"
+                                className="card-input"
+                                placeholder="example@gmail.com"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className="cuadroDatos">
+                            <label>Contraseña*:</label>
+                            <input
+                                type="password"
+                                className="card-input"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className="cuadroDatos">
+                            <label>Confirmar contraseña*:</label>
+                            <input
+                                type="password"
+                                className="card-input"
+                                value={passwordConfirm}
+                                onChange={(e) => setPasswordConfirm(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className="centrar">
+                            <button type="submit" className="boton">Registrarse</button>
+                        </div>
+                    </form>
                 </div>
-                <div>
-                    <label>Contraseña:</label>
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                </div>
-                <div>
-                    <label>Confirmar contraseña:</label>
-                    <input
-                        type="password"
-                        value={passwordConfirm}
-                        onChange={(e) => setPasswordConfirm(e.target.value)}
-                        required
-                    />
-                </div>
-                <button type="submit">Registrarse</button>
-            </form>
+            </div>
             <FooterPG />
         </div>
     );

@@ -73,38 +73,42 @@ const FormsLogin = () => {
     return (
       <div>
         <BarraSuperiorInicio />
-        <div className="mainContainer d-flex justify-content-center mt-5 mb-5">
+        <div className="mainContainer">
+          <div>
+            <h1 className="titulo">Iniciar Sesión</h1>
+          </div>
           <div className="card-datos">
-            <div className="card-body">
-              <h1 className="text-center titulo fw-bold mb-4">Iniciar Sesión</h1>
+            <div className="">
               <form onSubmit={handleLogin}>
-                <div className="form-group mb-3">
-                  <label>Usuario:</label>
+                <div className="cuadroDatos">
+                  <label>Usuario*:</label>
                   <input
                     type="text"
+                    placeholder="Nombre de usuario"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    className="form-control card-input"
+                    className="card-input"
                     required
                   />
                 </div>
-                <div className="form-group mb-3">
-                  <label>Contraseña:</label>
+                <div className="cuadroDatos">
+                  <label>Contraseña*:</label>
                   <input
                     type="password"
+                    // placeholder="Contraseña"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="form-control card-input"
+                    className="card-input"
                     required
                   />
                 </div>
-                <div className="text-center">
-                  <button type="submit" className="btn boton">
+                <div className="centrar">
+                  <button type="submit" className="boton">
                     Iniciar sesión
                   </button>
                 </div>
               </form>
-              <div className="text-center mt-4">
+              <div className="parrafoCentrar">
                 <p>
                   ¿Aún no tienes cuenta?{" "}
                   <Link to="/registro" className="link-primary">
