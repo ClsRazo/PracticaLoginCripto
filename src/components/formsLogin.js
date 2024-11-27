@@ -8,6 +8,10 @@ import React, {useState} from "react";
 //Para los links
 import {Link} from "react-router-dom";
 
+import { BarraSuperiorInicio } from "./BarraSuperiorInicio";
+import { FooterPG } from "./Footer";
+import "../CSS/contenedor.css";
+
 const FormsLogin = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -59,37 +63,55 @@ const FormsLogin = () => {
 
     return (
       <div>
-        <h1>Iniciar sesión</h1>
-          <form onSubmit={handleLogin}>
-            <div>
-              <label>Usuario:</label>
-              <input
-                type="text"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                required
-              />
+        <BarraSuperiorInicio />
+        <div className="mainContainer d-flex justify-content-center mt-5 mb-5">
+          <div className="card-datos">
+            <div className="card-body">
+              <h1 className="text-center titulo fw-bold mb-4">Iniciar Sesión</h1>
+              <form onSubmit={handleLogin}>
+                <div className="form-group mb-3">
+                  <label>Usuario:</label>
+                  <input
+                    type="text"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    className="form-control card-input"
+                    required
+                  />
+                </div>
+                <div className="form-group mb-3">
+                  <label>Contraseña:</label>
+                  <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="form-control card-input"
+                    required
+                  />
+                </div>
+                <div className="text-center">
+                  <button type="submit" className="btn boton">
+                    Iniciar sesión
+                  </button>
+                </div>
+              </form>
+              <div className="text-center mt-4">
+                <p>
+                  ¿Aún no tienes cuenta?{" "}
+                  <Link to="/registro" className="link-primary">
+                    Crea una aquí
+                  </Link>
+                </p>
+                <p>
+                  <Link to="/recuperar-password" className="link-primary">
+                    Olvidé mi contraseña
+                  </Link>
+                </p>
+              </div>
             </div>
-            <div>
-              <label>Contraseña:</label>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
-            <button type="submit">Iniciar sesión</button>
-          </form>
-
-          <div>
-            <p>
-              ¿Aún no tienes cuenta? Crea una <Link to="/registro">Aquí</Link>
-            </p>
-            <p>
-               <Link to="/recuperar-password">Olvidé mi contraseña</Link>
-            </p>
           </div>
+        </div>
+        <FooterPG />
       </div>
     );
 };

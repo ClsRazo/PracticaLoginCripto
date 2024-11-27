@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import zxcvbn from 'zxcvbn'; // Biblioteca para la validación de contraseñas 
 
+import { BarraSuperiorInicio } from "./BarraSuperiorInicio";
+import { FooterPG } from "./Footer";
+import "../CSS/contenedor.css";
+
 const RestablecerContraseña = () => {
     const [email, setEmail] = useState('');
     const [usuario, setUsuario] = useState('');
@@ -132,75 +136,87 @@ const RestablecerContraseña = () => {
         switch(paso) {
             case 'solicitarRestablecimiento':
                 return (
-                    <form onSubmit={manejarSolicitudRestablecimiento}>
-                        <h2>Restablecer Contraseña</h2>
-                        <div>
-                            <label>Nombre de Usuario:</label>
-                            <input
-                                type="text"
-                                value={usuario}
-                                onChange={(e) => setUsuario(e.target.value)}
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label>Correo Electrónico:</label>
-                            <input
-                                type="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                required
-                            />
-                        </div>
-                        <button type="submit">Solicitar Restablecimiento</button>
-                        {mensajeError && <p style={{color: 'red'}}>{mensajeError}</p>}
-                    </form>
+                    <div>
+                        <BarraSuperiorInicio />
+                        <form onSubmit={manejarSolicitudRestablecimiento}>
+                            <h2>Restablecer Contraseña</h2>
+                            <div>
+                                <label>Nombre de Usuario:</label>
+                                <input
+                                    type="text"
+                                    value={usuario}
+                                    onChange={(e) => setUsuario(e.target.value)}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label>Correo Electrónico:</label>
+                                <input
+                                    type="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    required
+                                />
+                            </div>
+                            <button type="submit">Solicitar Restablecimiento</button>
+                            {mensajeError && <p style={{color: 'red'}}>{mensajeError}</p>}
+                        </form>
+                        <FooterPG />
+                    </div>
                 );
             
             case 'introducirTokenRestablecimiento':
                 return (
-                    <form onSubmit={manejarVerificacionTokenRestablecimiento}>
-                        <h2>Verificar Código de Restablecimiento</h2>
-                        <p>Hemos enviado un código de restablecimiento a tu correo electrónico.</p>
-                        <div>
-                            <label>Código de Restablecimiento:</label>
-                            <input
-                                type="text"
-                                value={tokenRestablecimiento}
-                                onChange={(e) => setTokenRestablecimiento(e.target.value)}
-                                required
-                            />
-                        </div>
-                        <button type="submit">Verificar Código</button>
-                        {mensajeError && <p style={{color: 'red'}}>{mensajeError}</p>}
-                    </form>
+                    <div>
+                        <BarraSuperiorInicio />
+                        <form onSubmit={manejarVerificacionTokenRestablecimiento}>
+                            <h2>Verificar Código de Restablecimiento</h2>
+                            <p>Hemos enviado un código de restablecimiento a tu correo electrónico.</p>
+                            <div>
+                                <label>Código de Restablecimiento:</label>
+                                <input
+                                    type="text"
+                                    value={tokenRestablecimiento}
+                                    onChange={(e) => setTokenRestablecimiento(e.target.value)}
+                                    required
+                                />
+                            </div>
+                            <button type="submit">Verificar Código</button>
+                            {mensajeError && <p style={{color: 'red'}}>{mensajeError}</p>}
+                        </form>
+                        <FooterPG />
+                    </div>
                 );
             
             case 'restablecerContraseña':
                 return (
-                    <form onSubmit={manejarRestablecimientoContraseña}>
-                        <h2>Restablecer Contraseña</h2>
-                        <div>
-                            <label>Nueva Contraseña:</label>
-                            <input
-                                type="password"
-                                value={nuevaContraseña}
-                                onChange={(e) => setNuevaContraseña(e.target.value)}
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label>Confirmar Nueva Contraseña:</label>
-                            <input
-                                type="password"
-                                value={confirmarContraseña}
-                                onChange={(e) => setConfirmarContraseña(e.target.value)}
-                                required
-                            />
-                        </div>
-                        <button type="submit">Restablecer Contraseña</button>
-                        {mensajeError && <p style={{color: 'red'}}>{mensajeError}</p>}
-                    </form>
+                    <div>
+                        <BarraSuperiorInicio />
+                        <form onSubmit={manejarRestablecimientoContraseña}>
+                            <h2>Restablecer Contraseña</h2>
+                            <div>
+                                <label>Nueva Contraseña:</label>
+                                <input
+                                    type="password"
+                                    value={nuevaContraseña}
+                                    onChange={(e) => setNuevaContraseña(e.target.value)}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label>Confirmar Nueva Contraseña:</label>
+                                <input
+                                    type="password"
+                                    value={confirmarContraseña}
+                                    onChange={(e) => setConfirmarContraseña(e.target.value)}
+                                    required
+                                />
+                            </div>
+                            <button type="submit">Restablecer Contraseña</button>
+                            {mensajeError && <p style={{color: 'red'}}>{mensajeError}</p>}
+                        </form>
+                        <FooterPG />
+                    </div>
                 );
             
             default:

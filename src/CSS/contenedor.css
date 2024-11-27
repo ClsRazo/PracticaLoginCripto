@@ -1,0 +1,58 @@
+:root {
+    --morado-oscuro: #200232;
+    --morado-claro: #e7d9ff;
+    --morado-claro2: #d9c3ff;
+    --gris-texto: #6e6e6e;
+  }
+  
+  .mainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: var(--morado-claro);
+  }
+  
+  .card-datos {
+    border: 2px solid rgba(32, 3, 50, 0.2);
+    background-color: var(--morado-claro2);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .titulo {
+    font-size: 1.5rem;
+    color: var(--morado-oscuro);
+  }
+  
+  .card-input {
+    border: 1px solid var(--morado-oscuro);
+    border-radius: 8px;
+    padding: 0.5rem;
+  }
+  
+  .boton {
+    background-color: var(--morado-oscuro);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    transition: 0.3s ease;
+  }
+  
+  .boton:hover {
+    background-color: #3d004d;
+  }
+  
+  .link-primary {
+    color: var(--morado-oscuro);
+    text-decoration: none;
+  }
+  
+  .link-primary:hover {
+    text-decoration: underline;
+  }
+  
