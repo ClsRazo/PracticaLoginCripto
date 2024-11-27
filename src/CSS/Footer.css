@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap');
+
+:root {
+    --morado-oscuro: #200232;
+    --morado-claro: #e7d9ff;
+    --gris-texto: #6e6e6e;
+}
+
+/* Footer principal */
+.PiePag {
+    font-family: "Literata", serif;
+    font-weight: lighter;
+    background-color: var(--morado-oscuro);
+    color: var(--morado-claro);
+    text-align: center;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Estilo de las filas */
+.footer-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que las columnas se acomoden en múltiples filas en pantallas pequeñas */
+}
+
+/* Estilo de las columnas */
+.footer-column {
+    flex: 1; /* Todas las columnas tendrán el mismo ancho */
+    min-width: 120px; /* Asegura que las columnas no se colapsen demasiado */
+    padding: 5px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .footer-column {
+        flex: none; /* Quita el comportamiento de igual ancho en pantallas pequeñas */
+        text-align: center;
+    }
+}
