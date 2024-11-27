@@ -2,6 +2,10 @@ import React, { useState } from "react";
 //Biblioteca para la validacion de contraseñas, aparte de usar regex, será zxcvbn
 import zxcvbn from "zxcvbn";
 
+import { BarraSuperiorInicio } from "./BarraSuperiorInicio";
+import { FooterPG } from "./Footer";
+import "../CSS/contenedor.css";
+
 const Register = () => {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
@@ -41,7 +45,7 @@ const Register = () => {
         const hashHex = aBufferToHex(hashBuffer);
         console.log("Hash hexadecimal: ", hashHex);
 
-        const respuesta = await fetch("http://localhost:5000/register", {
+        const respuesta = await fetch("https://practicaloginback.onrender.com/register", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -63,6 +67,7 @@ const Register = () => {
 
     return(
         <div>
+            <BarraSuperiorInicio />
             <h1>Registro</h1>
             <form onSubmit={handleRegister}>
                 <div>
@@ -105,6 +110,7 @@ const Register = () => {
                 </div>
                 <button type="submit">Registrarse</button>
             </form>
+            <FooterPG />
         </div>
     );
 };
