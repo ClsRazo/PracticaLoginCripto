@@ -8,11 +8,11 @@ export function BarraSuperiorCerrar() {
     return (
         <header className="BarraSuperiorCerrar">
             <div className="ContenedorLogo">
-                <Link to="/home">
+                <Link to="/">
                     <img src={LogoInicio} alt="Logo RegiSecure" className="LogoInicioCerrar" />
                 </Link>
             </div>
-            <Link to="/login" className="CerrarSesion">
+            <Link to="/" className="CerrarSesion">
                 Cerrar sesión
             </Link>
         </header>

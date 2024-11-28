@@ -7,6 +7,7 @@ import Home from "./components/home";
 import Fact1Page from "./components/fact1";
 import Fact2Page from "./components/fact2";
 import Fact3Page from "./components/fact3";
+import FormsVerify from "./components/formsVerify";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<FormsLogin />} />
           <Route path="/registro" element={<FormsRegister />} />
+          <Route path="/verificacion" element={<FormsVerify />} />
           <Route path="/recuperar-password" element={<RestablecerContraseña />} />
           <Route path="/home" element={<Home />} />
           <Route path="/fact1" element={<Fact1Page />} />
