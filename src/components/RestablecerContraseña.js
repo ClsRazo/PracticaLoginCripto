@@ -6,6 +6,13 @@ import { BarraSuperiorInicio } from "./BarraSuperiorInicio";
 import { FooterPG } from "./Footer";
 import "../CSS/contenedor.css";
 
+//Reglas para la complejidad de la contraseña
+//Minimo de caracteres: 12
+//Al menos dos letras mayúsculas
+//Al menos dos letras minúsculas
+//Al menos dos números
+//Al menos dos caracteres especiales
+
 const RestablecerContraseña = () => {
     const [usuario, setUsuario] = useState('');
     const [paso, setPaso] = useState('solicitarRestablecimiento');
@@ -19,6 +26,9 @@ const RestablecerContraseña = () => {
     const aBufferToHex = (buffer) => {
         return [...new Uint8Array(buffer)].map((b) => b.toString(16).padStart(2, "0")).join("");
     };
+
+    //Para la validación de la contraseña con las reglas establecidas
+    const regex = /^(?=.*[a-z]{2,})(?=.*[A-Z]{2,})(?=.*[0-9]{2,})(?=.*[\W_]{2,}).{12,}$/;
 
     const manejarSolicitudRestablecimiento = async (e) => {
         e.preventDefault();
@@ -89,6 +99,13 @@ const RestablecerContraseña = () => {
 
         if (nuevaContraseña !== confirmarContraseña) {
             setMensajeError('Las contraseñas no coinciden');
+            return;
+        }
+
+        //Validamos la contraseña con las reglas establecidas
+        if(!regex.test(nuevaContraseña)){
+            //Mostramos un mensaje abajo del input de la contraseña
+            setMensajeError("La contraseña no cumple con las reglas establecidas");
             return;
         }
 
@@ -201,6 +218,20 @@ const RestablecerContraseña = () => {
                         <div className='mainContainer'>
                             <div>
                                 <h2 className='titulo'>Restablecer Contraseña</h2>
+                            </div>
+                            <div>
+                                <div className="parrafoCentrar">
+                                    <p>Recuerda que la contraseña debe cumplir con las siguientes reglas:</p>
+                                </div>
+                                <div className="NoBottom">
+                                <ul>
+                                    <li>Al menos 12 caracteres</li>
+                                    <li>Al menos dos letras mayúsculas</li>
+                                    <li>Al menos dos letras minúsculas</li>
+                                    <li>Al menos dos números</li>
+                                    <li>Al menos dos caracteres especiales</li>
+                                </ul>
+                                </div>
                             </div>
                             <div className='card-datos'>
                                 <form onSubmit={manejarRestablecimientoContraseña}>
