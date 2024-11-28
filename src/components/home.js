@@ -2,6 +2,8 @@ import React, {useState} from "react";
 
 import {Link} from "react-router-dom";
 
+import { useLocation } from "react-router-dom";
+
 import { BarraSuperiorCerrar } from "./BarraSuperiorCerrar";
 import { FooterPG } from "./Footer";
 import "../CSS/contenedor.css";
@@ -9,7 +11,10 @@ import "../CSS/contenedor.css";
 
 const Home = () => {
 
-    const [message, setMessage] = useState("¡Bienvenido!");
+    const location = useLocation();
+    const {username} = location.state || {};
+
+    const [message, setMessage] = useState("¡Bienvenid@" + (username ? ", " + username : "") + "!");
 
     return (
         <div>
