@@ -66,7 +66,7 @@ const FormsLogin = () => {
         //-----------------------Redirigir a Home Page----------------------------
         if(respuesta2.message == "Login exitoso"){
           console.log("Redirigiendo a Home");
-          navigate("/home");
+          navigate("/home", {state: {username: username}});
         }
     };
 
