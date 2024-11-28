@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/PracticaLoginCripto/static/css/main.290a5acf.css",
-    "main.js": "/PracticaLoginCripto/static/js/main.cd38c298.js",
+    "main.js": "/PracticaLoginCripto/static/js/main.c779c3f7.js",
     "static/js/239.6437fb0c.chunk.js": "/PracticaLoginCripto/static/js/239.6437fb0c.chunk.js",
     "static/js/213.a96040d7.chunk.js": "/PracticaLoginCripto/static/js/213.a96040d7.chunk.js",
     "static/js/732.4528f94f.chunk.js": "/PracticaLoginCripto/static/js/732.4528f94f.chunk.js",
@@ -9,7 +9,7 @@
     "static/media/LogoCentro.png": "/PracticaLoginCripto/static/media/LogoCentro.34f539d2798742beb34d.png",
     "index.html": "/PracticaLoginCripto/index.html",
     "main.290a5acf.css.map": "/PracticaLoginCripto/static/css/main.290a5acf.css.map",
-    "main.cd38c298.js.map": "/PracticaLoginCripto/static/js/main.cd38c298.js.map",
+    "main.c779c3f7.js.map": "/PracticaLoginCripto/static/js/main.c779c3f7.js.map",
     "239.6437fb0c.chunk.js.map": "/PracticaLoginCripto/static/js/239.6437fb0c.chunk.js.map",
     "213.a96040d7.chunk.js.map": "/PracticaLoginCripto/static/js/213.a96040d7.chunk.js.map",
     "732.4528f94f.chunk.js.map": "/PracticaLoginCripto/static/js/732.4528f94f.chunk.js.map",
@@ -17,6 +17,6 @@
   },
   "entrypoints": [
     "static/css/main.290a5acf.css",
-    "static/js/main.cd38c298.js"
+    "static/js/main.c779c3f7.js"
   ]
 }
