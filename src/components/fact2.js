@@ -13,7 +13,7 @@ const Fact2Page = () => {
     const generatePDF = () => {
         const doc = new jsPDF();
         doc.setFontSize(16);
-        doc.text("Criptografía de clave pública: la base de Internet", 10, 20);
+        doc.text("Criptografía de clave pública: la base de Internet", 105, 10, null, null, "center");
         doc.setFontSize(12);
         doc.text(
           `Los límites de la criptografía simétrica:
@@ -38,6 +38,7 @@ La criptografía de clave pública no solo ha transformado la seguridad en líne
           30,
           { maxWidth: 180 }
         );
+        doc.text("© RegiSecure. Todos los derechos reservados", 105, 280, null, null, "center");
         doc.save("PublicKey.pdf");
       };
 

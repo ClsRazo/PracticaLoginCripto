@@ -11,7 +11,7 @@ const Fact3Page = () => {
     const generatePDF = () => {
         const doc = new jsPDF();
         doc.setFontSize(16);
-        doc.text("Criptografía cuántica: el futuro de la seguridad", 10, 20);
+        doc.text("Criptografía cuántica: el futuro de la seguridad", 105, 10, null, null, "center");
         doc.setFontSize(12);
         doc.text(
           `La mecánica cuántica aplicada a la criptografía:
@@ -36,6 +36,7 @@ La criptografía cuántica no solo protegerá datos sensibles contra amenazas fu
           30,
           { maxWidth: 180 }
         );
+        doc.text("© RegiSecure. Todos los derechos reservados", 105, 280, null, null, "center");
         doc.save("Quantum_Crypto.pdf");
       };
 

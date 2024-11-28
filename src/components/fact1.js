@@ -11,8 +11,12 @@ const Fact1Page = () => {
     const generatePDF = () => {
         const doc = new jsPDF();
         doc.setFontSize(16);
-        doc.text("La máquina Enigma y la Segunda Guerra Mundial", 10, 20);
+        //Titulo centrado
+        doc.text("La máquina Enigma y la Segunda Guerra Mundial", 105, 10, null, null, "center");
+
+        // doc.text("La máquina Enigma y la Segunda Guerra Mundial", 10, 20);
         doc.setFontSize(12);
+        //Texto justificado
         doc.text(
           `Orígenes y diseño de Enigma:
 La máquina Enigma fue diseñada inicialmente para propósitos comerciales por Arthur Scherbius en la década de 1920. Su potencial para proteger comunicaciones pronto llamó la atención de los militares, particularmente de Alemania, que comenzó a adaptarla y perfeccionarla para sus necesidades bélicas. La versión militar introdujo un sistema de rotores adicionales y configuraciones diarias que incrementaban exponencialmente el número de combinaciones posibles, alcanzando cifras astronómicas que hacían virtualmente imposible descifrar un mensaje sin conocer la configuración exacta.
@@ -29,6 +33,9 @@ Descifrar Enigma permitió a los Aliados interceptar y anticipar los movimientos
           30,
           { maxWidth: 180 }
         );
+        //Agregamos el nombre de la empresa
+        doc.text("© RegiSecure. Todos los derechos reservados", 105, 280, null, null, "center");
+
         doc.save("Enigma.pdf");
       };
 
